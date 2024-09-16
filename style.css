@@ -6,18 +6,28 @@
   box-sizing: border-box;
 }
 
+:root {
+  --Very_Dark_Grayish_Blue: hsl(217, 19%, 35%);
+  --Desaturated_Dark_Blue: hsl(214, 17%, 51%);
+  --Grayish_Blue: hsl(212, 23%, 69%);
+  --Light_Grayish_Blue: hsl(210, 46%, 95%);
+}
+
 body {
   font-family: "Manrope", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   min-height: 100svh;
+  background: var(--Light_Grayish_Blue);
 }
 
 .container {
-  max-width: 70svw;
+  max-width: 70%;
   display: flex;
+  background: white;
+  border-radius: 18px;
 }
 
 .container .artical-image {
@@ -26,7 +36,127 @@ body {
   border-radius: 18px 0 0 18px;
 }
 
+.artical {
+  padding: 50px;
+}
+
+.artical h1 {
+  color: var(--Very_Dark_Grayish_Blue);
+  font-weight: 700;
+}
+
+.artical p {
+  font-size: larger;
+  color: var(--Desaturated_Dark_Blue);
+  font-weight: 500;
+  margin: 30px 0;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+}
+
+.user-area .user-image {
+  max-width: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.user-area .name-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-area .name-date .name {
+  font-weight: 700;
+  font-size: large;
+  opacity: 80%;
+}
+
+.user-area .name-date .date {
+  font-size: large;
+  color: var(--Grayish_Blue);
+}
+
+.user-area #share {
+  border: none;
+  margin-left: auto;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  border: 8px solid transparent;
+  &:hover {
+    background-color: var(--Desaturated_Dark_Blue);
+  }
+}
+
+.user-area #share img {
+  width: 25px;
+  height: auto;
+  margin: 10px;
+}
+
+.share-container {
+  position: absolute;
+  background: var(--Very_Dark_Grayish_Blue);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  top: -60px;
+  left: -70px;
+  transform: translate(-22%, -50%);
+  padding: 10px 50px;
+  border-radius: 10px;
+  display: none;
+}
+
+#share:hover .share-container {
+  display: flex;
+  z-index: 10;
+}
+
+.share-container img {
+  width: 25px;
+  height: auto;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.share-container:hover img {
+  transform: scale(1.2);
+}
+
+#shr {
+  text-transform: uppercase;
+  color: var(--Grayish_Blue);
+  font-size: large;
+  letter-spacing: 5px;
+  margin-right: 10px;
+}
+
+.bottom-arrow {
+  border-bottom: 5px solid #6a0136;
+}
+.bottom-arrow:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 35px auto;
+  width: 0;
+  height: 0;
+  border-top: 20px solid var(--Very_Dark_Grayish_Blue);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  &hover {
+    cursor: pointer;
+  }
+}
+
 .attribution {
+  margin-top: 30px;
   font-size: 11px;
   text-align: center;
 }
