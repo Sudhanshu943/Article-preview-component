@@ -24,7 +24,8 @@ body {
 }
 
 .container {
-  max-width: 70%;
+  max-width: 59em;
+  margin: 30px;
   display: flex;
   background: white;
   border-radius: 18px;
@@ -36,20 +37,21 @@ body {
   border-radius: 18px 0 0 18px;
 }
 
-.artical {
-  padding: 50px;
+.c2 {
+  padding: 45px;
 }
 
 .artical h1 {
   color: var(--Very_Dark_Grayish_Blue);
   font-weight: 700;
+  font-size: 1.6rem;
 }
 
 .artical p {
-  font-size: larger;
+  font-size: large;
   color: var(--Desaturated_Dark_Blue);
   font-weight: 500;
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 .user-area {
@@ -58,7 +60,7 @@ body {
 }
 
 .user-area .user-image {
-  max-width: 60px;
+  max-width: 50px;
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -70,12 +72,12 @@ body {
 
 .user-area .name-date .name {
   font-weight: 700;
-  font-size: large;
+  font-size: 1.1rem;
   opacity: 80%;
 }
 
 .user-area .name-date .date {
-  font-size: large;
+  font-size: 1.1rem;
   color: var(--Grayish_Blue);
 }
 
@@ -83,37 +85,40 @@ body {
   border: none;
   margin-left: auto;
   border-radius: 50%;
-  position: relative;
   cursor: pointer;
   border: 8px solid transparent;
+
   &:hover {
     background-color: var(--Desaturated_Dark_Blue);
   }
 }
 
 .user-area #share img {
-  width: 25px;
+  width: 15px;
   height: auto;
   margin: 10px;
 }
 
 .share-container {
+  display: none;
   position: absolute;
   background: var(--Very_Dark_Grayish_Blue);
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
-  top: -60px;
-  left: -70px;
-  transform: translate(-22%, -50%);
   padding: 10px 50px;
   border-radius: 10px;
-  display: none;
+}
+.share-container button#share {
+  margin-left: 10px;
+  border: none;
+  background: none;
 }
 
-#share:hover .share-container {
-  display: flex;
-  z-index: 10;
+.user-area button#share {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .share-container img {
@@ -144,7 +149,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  margin: 35px auto;
+  margin: 30px auto;
   width: 0;
   height: 0;
   border-top: 20px solid var(--Very_Dark_Grayish_Blue);
@@ -162,4 +167,97 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+  .user-area {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .share-container {
+    position: absolute;
+    bottom: 67px;
+    left: 46%;
+    transform: translate(49%, 0);
+    display: none;
+    background: var(--Very_Dark_Grayish_Blue);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 1;
+  }
+
+  .share-container::after {
+    content: "";
+    position: absolute;
+    bottom: -39px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 20px;
+    border-style: solid;
+    border-color: var(--Very_Dark_Grayish_Blue) transparent transparent
+      transparent;
+  }
+  .user-area {
+    display: flex;
+  }
+
+  #share {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 315px;
+    margin: 60px auto auto;
+    flex-direction: column;
+  }
+  .container .artical-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 18px 18px 0 0;
+  }
+  .artical {
+    padding: 30px 30px 0 30px;
+  }
+  .artical h1 {
+    font-size: 1rem;
+  }
+  .c2 {
+    padding: 0;
+  }
+  .artical p {
+    font-size: small;
+  }
+
+  .user-area {
+    margin: 16px 30px;
+    display: flex;
+  }
+
+  .user-area.hide {
+    display: none;
+  }
+
+  .user-area .user-image {
+    max-width: 43px;
+    margin-right: 20px;
+  }
+
+  .user-area .name-date .name {
+    font-size: 0.8rem;
+  }
+
+  .user-area .name-date .date {
+    font-size: 0.81rem;
+  }
+
+  .share-container {
+    position: relative;
+    justify-content: center;
+    display: none;
+    border-radius: 0 0 10px 10px;
+  }
 }
